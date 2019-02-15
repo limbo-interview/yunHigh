@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<meta content="yes" name="apple-touch-fullscreen">
+<meta name="format-detection" content="telephone=no">
+<title>Socket.IO chat</title>
+<link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+<div class="step_1 js_step_1">
+  <img src="./image/logo.png" class="logo">
+  <input type="text" placeholder="用户名" class="js_username"/>
+  <div class="btn js_login">登录</div>
+</div>
+<div class="step_2 js_step_2">
+  <img src="./image/btn.png" class="start">
+  <img src="./image/btn_about.png" class="about">
+</div>
+<div class="step_3 js_step_3">
+  <div class="loading">
+    <img class="hello" src="./image/loading.png">
+    <p>目前在线 <span class="friends">0</span> 位聊友 <br />正在匹配对的人</p>
+  </div>
+</div>
+<div class="step_4 js_step_4">
+  <div style="width:0;height:0;overflow:hidden;">
+    <video id="localVideo" autoplay muted playsinline></video>
+    <video id="remoteVideo" autoplay playsinline></video>
+  </div>
+  <div class="quit js_quit">退出</div>
+  <div class="box">
+    <span>我们今天聊聊</span>
+    <p class="js_topic">北京的鬼天气咋又冷了</p>
+  </div>
+  <div class="avatar">
+    <div class="women"><img src="./image/women.png"></div>
+    <div class="man"><img src="./image/man.png"></div>
+  </div>
+  <div class="time">倒计时: 00:<span class="js_second">59<span></div>
+  <div class="buttom">
+    <div class="pay js_pop">支付1元继续畅聊</div>
+    <div class="add js_pop">添加好友</div>
+  </div>
+</div>
+<script src="./script/adapter.js"></script>
+<script src="./script/socket.io.js"></script>
+<script src="./script/jquery.js"></script>
+<script src="./script/script.js"></script>
+</body>
+</html>
