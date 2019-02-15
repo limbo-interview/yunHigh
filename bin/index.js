@@ -30,8 +30,8 @@ io.on('connection', socket => {
       id: socket.id,
       name: username,
     })
-    console.log(users.length)
-    socket.emit('friends', users.length + 1)
+    console.log(socket.id)
+    socket.emit('friends', users.length)
   })
 
   // 断开连接
@@ -82,6 +82,7 @@ setInterval(() => {
     const one = group && group[i] && group[i][0]
     const two = group && group[i] && group[i][1]
     if (one && two) {
+      console.log(one, two)
       room += 1
       io.sockets.connected[one].emit('room', room)
       io.sockets.connected[two].emit('room', room)
@@ -89,7 +90,7 @@ setInterval(() => {
       pool.splice(pool.indexOf(two), 1)
     }
   }
-}, 1000 * 1)
+}, 1000 * 10)
 
 // 数组两两分组
 const arrSlice = arr =>
