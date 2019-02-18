@@ -30,7 +30,8 @@ io.on('connection', socket => {
       id: socket.id,
       name: username,
     })
-    console.log(socket.id)
+    // 给自己以及其他人发在线用户数
+    socket.broadcast.emit('friends', users.length)
     socket.emit('friends', users.length)
   })
 
@@ -53,26 +54,6 @@ io.on('connection', socket => {
     socket.leave(room)
     socket.broadcast.emit('close', room)
   })
-
-  // 视频部分 start
-  socket.on('message', function(message) {
-    socket.broadcast.emit('message', message)
-  })
-
-  socket.on('create or join', function(room) {
-    var clientsInRoom = io.sockets.adapter.rooms[room];
-    var numClients = clientsInRoom ? Object.keys(clientsInRoom.sockets).length : 0;
-    if (numClients % 2 === 0) {
-      socket.join(room);
-      socket.emit('created', room, socket.id);
-    } else if (numClients % 2 === 1) {
-      io.sockets.in(room).emit('join', room);
-      socket.join(room);
-      socket.emit('joined', room, socket.id);
-      io.sockets.in(room).emit('ready');
-    }
-  })
-  // 视频部分 end
 })
 
 // 每十秒匹配一次
