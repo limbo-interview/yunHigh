@@ -32,10 +32,10 @@ $(function () {
 
   // 分配房间后进入页面
   socket.on('room', data => {
-    console.log(data)
+    room = data
     $('.js_step_3').hide()
     $('.js_step_4').show()
-    webrtc.joinRoom('video')
+    webrtc.joinRoom(data)
     let second = 59
     const clock = window.setInterval(function() {
       second -= 1
@@ -55,12 +55,12 @@ $(function () {
   // 退出
   $('.js_quit').click(function() {
     close()
-    socket.emit('close', roomm)
+    socket.emit('close', room)
   })
 
   // 关闭
   socket.on('close', data => {
-    if (data == roomm) close()
+    if (data == room) close()
   })
 
   function close() {
