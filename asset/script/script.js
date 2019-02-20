@@ -19,7 +19,7 @@ $(function () {
 
   // 显示所有用户数
   socket.on('friends', data => {
-    console.log(data)
+    console.log('用户数:', data)
     $('.friends').text(data)
   })
 
@@ -33,9 +33,11 @@ $(function () {
   // 分配房间后进入页面
   socket.on('room', data => {
     room = data
+    console.log('房间号:', room)
     $('.js_step_3').hide()
     $('.js_step_4').show()
-    webrtc.joinRoom(data)
+    const roomm = 'room' + data
+    webrtc.joinRoom(roomm)
     let second = 59
     const clock = window.setInterval(function() {
       second -= 1
