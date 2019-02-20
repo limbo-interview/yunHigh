@@ -85,7 +85,7 @@ $(function () {
   webrtc.on('videoAdded', function (video, peer) {
     $(video).appendTo('body')
     $(video).attr('id', 'dest-' + peer.id)
-    $(video).hide()
+    // $(video).hide()
   })
 
   webrtc.on('videoRemoved', function (video, peer) {

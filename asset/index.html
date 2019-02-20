@@ -7,6 +7,18 @@
 <meta name="format-detection" content="telephone=no">
 <title>Socket.IO chat</title>
 <link rel="stylesheet" href="./style/style.css">
+<style>
+#myVideo {
+  left: 0;
+}
+video {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+}
+</style>
 </head>
 <body>
 <div class="step_1 js_step_1">
@@ -25,8 +37,8 @@
   </div>
 </div>
 <div class="step_4 js_step_4">
+  <video id="myVideo" autoplay></video>
   <div style="width:0;height:0;overflow:hidden;">
-    <video id="myVideo" autoplay muted playsinline></video>
   </div>
   <div class="quit js_quit">退出</div>
   <div class="box">
