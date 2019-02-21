@@ -1,4 +1,27 @@
+const randomNum = maxNum => parseInt(Math.random() * (maxNum - 1),10)
+
+
 $(function () {
+  const topic = [
+    '北京的鬼天气咋又冷了',
+    '下雪了，炸鸡配啤酒？',
+    '年终奖。。。还是被裁员',
+    '“流浪地球”为啥被豆瓣黑惨了',
+    '二月不减肥，一年徒伤悲',
+    '萝莉音 Vs 御姐音',
+    '堵车 OR 一路畅通',
+    '初恋那件小事：）',
+    '“王者荣耀”啥段位，是大神不',
+    '今天吃鸡了吗：）',
+    '特斯拉modle3有兴趣不',
+    '汤圆 OR 元宵',
+    '燃烧我的卡路里!',
+    '一起说走就走旅行，敢吗',
+  ]
+  // 选择话题
+  $('.js_topic').text(topic[randomNum(topic.length)])
+  $('.js_avatar_w').attr('src', './image/' + randomNum(50) + '.jpg')
+  $('.js_avatar_m').attr('src', './image/' + randomNum(50) + '.jpg')
   // 显示第一页
   $('.js_step_1').show()
   // 创建 IO

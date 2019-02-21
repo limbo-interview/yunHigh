@@ -11,7 +11,7 @@ body,
 .step_4 {
   width: 100%;
   height: 100%;
-//  overflow: hidden;
+  overflow: hidden;
 }
 
 body {
@@ -60,6 +60,10 @@ body {
   border-radius: 20px;
 }
 
+.step_2 {
+  background: url(../image/sound.png) no-repeat center 80px;
+  background-size: 100% auto;
+}
 .step_2 .start {
   display: block;
   width: 320px;
@@ -77,6 +81,27 @@ body {
   width: 100%;
   height: 303px;
   margin: 100px auto 0;
+  position: relative;
+  background: url(../image/sound.png) no-repeat center 10px;
+  background-size: 100% auto;
+}
+.step_3 .round {
+  width: 300px;
+  height: 283px;
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  margin: 0 0 0 -150px;
+  animation: myRotate 3s linear infinite;
+}
+.step_3 .round img {
+  height: 100%;
+  float: right;
+}
+@keyframes myRotate{
+  0%{ -webkit-transform: rotate(0deg);}
+  50%{ -webkit-transform: rotate(180deg);}
+  100%{ -webkit-transform: rotate(360deg);}
 }
 .step_3 .hello {
   display: block;
@@ -131,14 +156,19 @@ body {
   margin: 30px 20px 0;
 }
 .step_4 .avatar .women {
-  height: 116px;
+  height: 100px;
   background: url(../image/sound_wave.png) no-repeat center left;
+}
+.step_4 img {
+  border: 3px solid rgb(173, 142, 237);
+  border-radius: 50%;
+  height: 100%;
 }
 .step_4 .women img {
   float: right;
 }
 .step_4 .avatar .man {
-  height: 116px;
+  height: 100px;
   background: url(../image/sound_wave.png) no-repeat center right;
 }
 .step_4 .man img {
