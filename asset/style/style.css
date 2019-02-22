@@ -19,6 +19,56 @@ body {
   background-size: 100% 100%;
 }
 
+.menu_box {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.menu_box div {
+  position: fixed;
+  top: 0;
+  right: 80px;
+  background: url(../image/mask.png) no-repeat center center;
+  background-size: 100% 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+.menu_box .logo {
+  display: block;
+  margin: 100px auto 0;
+}
+.menu_box .list {
+  margin: 60px 0 0 60px;
+}
+.message_box {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.message_box div {
+  position: fixed;
+  top: 0;
+  background: url(../image/mask.png) no-repeat center center;
+  background-size: 100% 100%;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  width: 80%;
+}
+.message_box img {
+  margin: 10px 0 0 10px;
+}
+
 .step_1,
 .step_2,
 .step_3,
@@ -61,8 +111,19 @@ body {
 }
 
 .step_2 {
+  position: relative;
   background: url(../image/sound.png) no-repeat center 80px;
   background-size: 100% auto;
+}
+.step_2 .menu {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.step_2 .message {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 .step_2 .start {
   display: block;
@@ -156,6 +217,7 @@ body {
   margin: 30px 20px 0;
 }
 .step_4 .avatar .women {
+  position: relative;
   height: 100px;
   background: url(../image/sound_wave.png) no-repeat center left;
 }
@@ -164,12 +226,35 @@ body {
   border-radius: 50%;
   height: 100%;
 }
+.step_4 .women div {
+  position: absolute;
+  width: 100px;
+  text-align: center;
+  bottom: -35px;
+  right: 0;
+  float: right;
+  font-size: 20px;
+  line-height: 20px;
+  color: #fff;
+}
 .step_4 .women img {
   float: right;
 }
 .step_4 .avatar .man {
+  position: relative;
   height: 100px;
   background: url(../image/sound_wave.png) no-repeat center right;
+}
+.step_4 .man div {
+  position: absolute;
+  width: 100px;
+  text-align: center;
+  top: -35px;
+  left: 0;
+  float: right;
+  font-size: 20px;
+  line-height: 20px;
+  color: #fff;
 }
 .step_4 .man img {
   float: left;

@@ -1,29 +1,22 @@
-const randomNum = maxNum => parseInt(Math.random() * (maxNum - 1),10)
-
-
 $(function () {
-  const topic = [
-    '北京的鬼天气咋又冷了',
-    '下雪了，炸鸡配啤酒？',
-    '年终奖。。。还是被裁员',
-    '“流浪地球”为啥被豆瓣黑惨了',
-    '二月不减肥，一年徒伤悲',
-    '萝莉音 Vs 御姐音',
-    '堵车 OR 一路畅通',
-    '初恋那件小事：）',
-    '“王者荣耀”啥段位，是大神不',
-    '今天吃鸡了吗：）',
-    '特斯拉modle3有兴趣不',
-    '汤圆 OR 元宵',
-    '燃烧我的卡路里!',
-    '一起说走就走旅行，敢吗',
-  ]
-  // 选择话题
-  $('.js_topic').text(topic[randomNum(topic.length)])
-  $('.js_avatar_w').attr('src', './image/' + randomNum(50) + '.jpg')
-  $('.js_avatar_m').attr('src', './image/' + randomNum(50) + '.jpg')
   // 显示第一页
   $('.js_step_1').show()
+  // 显示 menu
+  $('.js_menu').click(function() {
+    $('.js_menu_box').show()
+  })
+  // 隐藏 menu
+  $('.js_menu_box').click(function() {
+    $(this).hide()
+  })
+  // 显示 message
+  $('.js_message').click(function() {
+    $('.js_message_box').show()
+  })
+  // 隐藏 message
+  $('.js_message_box').click(function() {
+    $(this).hide()
+  })
   // 创建 IO
   const socket = io()
   let room
@@ -36,6 +29,7 @@ $(function () {
     } else {
       $('.js_step_1').hide()
       $('.js_step_2').show()
+      $('.js_name_w').text(value)
       socket.emit('login', value)
     }
   })
@@ -44,6 +38,10 @@ $(function () {
   socket.on('friends', data => {
     console.log('用户数:', data)
     $('.friends').text(data)
+  })
+  // 设置头像
+  socket.on('avatar', num => {
+    $('.js_avatar_w').attr('src', './image/' + num + '.jpg')
   })
 
   // 开始匹配
@@ -55,11 +53,15 @@ $(function () {
 
   // 分配房间后进入页面
   socket.on('room', data => {
-    room = data
+    console.log(data)
+    const { room, name, topic, num } = data
     console.log('房间号:', room)
     $('.js_step_3').hide()
     $('.js_step_4').show()
-    const roomm = 'room' + data
+    $('.js_avatar_m').attr('src', './image/' + num + '.jpg')
+    $('.js_name_m').text(name)
+    $('.js_topic').text(topic)
+    const roomm = 'room' + room
     webrtc.joinRoom(roomm)
     let second = 59
     const clock = window.setInterval(function() {
