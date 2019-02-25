@@ -100,7 +100,6 @@ setInterval(() => {
           nameT = users[i].name
         }
       }
-      console.log(users)
       io.sockets.connected[one].emit(
         'room',
         {

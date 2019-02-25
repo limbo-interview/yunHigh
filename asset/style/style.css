@@ -112,8 +112,6 @@ body {
 
 .step_2 {
   position: relative;
-  background: url(../image/sound.png) no-repeat center 80px;
-  background-size: 100% auto;
 }
 .step_2 .menu {
   position: absolute;
@@ -125,11 +123,19 @@ body {
   top: 10px;
   right: 10px;
 }
+.step_2 .btn {
+  display: block;
+  width: 100%;
+  height: 320px;
+  margin: 50px auto 0;
+  background: url(../image/sound.png) no-repeat center center;
+  background-size: 100% 100%;
+}
 .step_2 .start {
+  margin: 0 auto;
   display: block;
   width: 320px;
   height: 320px;
-  margin: 50px auto 0;
 }
 .step_2 .about {
   display: block;
@@ -140,35 +146,56 @@ body {
 
 .step_3 .loading {
   width: 100%;
-  height: 303px;
-  margin: 100px auto 0;
+  height: 320px;
+  margin: 50px auto 0;
   position: relative;
-  background: url(../image/sound.png) no-repeat center 10px;
-  background-size: 100% auto;
+  background: url(../image/sound.png) no-repeat center center;
+  background-size: 100% 100%;
 }
 .step_3 .round {
-  width: 300px;
-  height: 283px;
+  width: 320px;
+  height: 320px;
   position: absolute;
-  top: -12px;
+  top: -4.5px;
   left: 50%;
-  margin: 0 0 0 -150px;
+  margin: 0 0 0 -160px;
   animation: myRotate 3s linear infinite;
 }
 .step_3 .round img {
   height: 100%;
   float: right;
 }
-@keyframes myRotate{
-  0%{ -webkit-transform: rotate(0deg);}
-  50%{ -webkit-transform: rotate(180deg);}
-  100%{ -webkit-transform: rotate(360deg);}
-}
 .step_3 .hello {
   display: block;
-  width: 270px;
-  height: 270px;
-  margin: 20px auto 0;
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
+  animation:heartbeat 1s infinite;
+}
+@keyframes myRotate{
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes heartbeat {
+  0% {
+    transform: scale(0.8, 0.8);
+    opacity:1;
+  }
+  25% {
+    transform: scale(1,1);
+    opacity:0.8;
+  }
+  100% {
+    transform: scale(0.8,0.8);
+    opacity:1;
+  }
 }
 .step_3 p {
   margin: 131px 0 0;
