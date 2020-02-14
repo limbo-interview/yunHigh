@@ -7,6 +7,9 @@
 <meta name="format-detection" content="telephone=no">
 <title>YunHigh</title>
 <link rel="stylesheet" href="./style/style.css">
+ <link rel="stylesheet" href="./css/bootstrap-material-design.min.css">
+ <link rel="stylesheet" href="./css/common.css">
+ <link rel="stylesheet" href="./css/toastify.min.css">
 </head>
 <body>
 <div class="page_1">
@@ -30,17 +33,15 @@
   </div>
   <div class="self">
     <div>
-      <video id="myVideo" autoplay></video>
+      <div class="video-grid" id="video_grid">
+        <div id="local_stream" class="video-placeholder">
+          <div id="local_video_info" class="video-info"></div>
+        </div>
+      </div>
       <img src="" alt="" id="myImg" />
     </div>
   </div>
   <div class="video">
-    <div>
-      <video id="oneVideo" autoplay></video>
-    </div>
-    <div>
-      <video id="twoVideo" autoplay></video>
-    </div>
   </div>
   <div class="friend_bg"></div>
   <div class="friend_list">
@@ -75,9 +76,25 @@
     </div>
   </div>
 </div>
-<script src="./script/simplewebrtc-with-adapter.bundle.js"></script>
+
+<!-- Demo 相关第三方库-->
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script src="./js/popper.js"></script>
+<script src="./js/toastify.js"></script>
+<script src="./js/bootstrap-material-design.min.js"></script>
+<script>$(document).ready(function () { $('body').bootstrapMaterialDesign(); });</script>
+<!-- 引入 TRTC WEB SDK 脚本 -->
+<script src="./js/trtc.js"></script>
+<!-- Demo 相关脚本 -->
+<script src="./js/lib-generate-test-usersig.min.js"></script>
+<script src="./js/debug/GenerateTestUserSig.js"></script>
+<script src="./js/utils.js"></script>
+<script src="./js/rtc-client.js"></script>
+
 <script src="./script/socket.io.js"></script>
+<!--
 <script src="./script/jquery.js"></script>
+-->
 <script src="./script/script.js"></script>
 </body>
 </html>

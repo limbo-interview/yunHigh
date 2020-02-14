@@ -1,23 +1,12 @@
 function Random(min, max) {
     return Math.floor(Math.random() * ((max-1) - (min+1))) + (min+1);
 }
-$(function () {
-  var webrtc = new SimpleWebRTC({
-    localVideoEl: 'myVideo',
-    remoteVideosEl: '',
-    autoRequestMedia: true,
-    debug: false,
-    detectSpeakingEvents: true,
-    media: {
-      video: true,
-      audio: true,
-    },
-    autoAdjustMic: true,
-  })
-  const user = $.now()
+$(document).ready(function() {
+  let rtc = null
+  const room = '889988'
+  const user = $.now() + ''
   // 创建 IO
   const socket = io()
-  const room = 'room1'
   /* 显示第一页
   */
   $('.page_1 .create').click(function() {
@@ -37,10 +26,6 @@ $(function () {
     $('.page_2').show()
     joinRoom()
   })
-
-  function joinRoom() {
-    socket.emit('join', user)
-  }
 
 
   /* 显示第二页
@@ -99,15 +84,19 @@ $(function () {
     }
     clearImg()
   })
-  socket.on('join', data => {
-    console.log(room)
-    console.log(data)
-    webrtc.joinRoom(room)
-  })
-  webrtc.on('videoAdded', function (video, peer) {
-    console.log(video, peer)
-    // $(video).appendTo('body')
-    // $(video).attr('id', 'dest-' + peer.id)
-    // $(video).hide()
-  })
+
+  function joinRoom() {
+    if (rtc) return;
+    const userId = user;
+    const roomId = room;
+    const config = genTestUserSig(userId);
+    rtc = new RtcClient({
+      userId,
+      roomId,
+      sdkAppId: config.sdkAppId,
+      userSig: config.userSig
+    });
+    rtc.join();
+  }
+  joinRoom()
 })
