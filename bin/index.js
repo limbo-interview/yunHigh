@@ -18,16 +18,9 @@ app.use(router.routes())
 
 io.on('connection', socket => {
   // 登录
-  socket.on('join', id => {
-    console.log(id)
-    socket.broadcast.emit('join', id)
-    socket.emit('join', id)
-  })
-
-  // 退出
-  socket.on('close', room => {
-    socket.leave(room)
-    socket.broadcast.emit('close', room)
+  socket.on('interact', param => {
+    socket.broadcast.emit('interact', param)
+    socket.emit('interact', param)
   })
 })
 

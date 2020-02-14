@@ -1,11 +1,12 @@
 /* eslint-disable require-jsdoc */
 
-function addView(id) {
+function addView(id, uid = null) {
   if (!$('#' + id)[0]) {
     $('<div/>', {
       id,
       class: 'video-view'
     }).appendTo('.video');
+    $('#' + id).attr('uid', uid)
   }
 }
 

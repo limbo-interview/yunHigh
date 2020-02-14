@@ -234,9 +234,10 @@ class RtcClient {
     // 远端流订阅成功事件
     this.client_.on('stream-subscribed', evt => {
       const remoteStream = evt.stream;
+      const uid = remoteStream.userId_ || null
       const id = remoteStream.getId();
       this.remoteStreams_.push(remoteStream);
-      addView(id);
+      addView(id, uid);
       // 在指定的 div 容器上播放音视频
       remoteStream.play(id);
       console.log('stream-subscribed ID: ', id);

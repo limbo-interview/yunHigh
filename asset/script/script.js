@@ -51,9 +51,10 @@ $(document).ready(function() {
   })
   $('.page_2 .biaoqing div img').click(function() {
     const src = $(this).attr('src')
+    interact(src)
     $('.page_2 .self img').attr('src', src)
     $('.page_2 .self img').show()
-    clearImg()
+    // clearImg()
   })
   function clearImg() {
     clearTimeout(clearTime)
@@ -71,21 +72,38 @@ $(document).ready(function() {
   $('.page_2 .youxi div img').click(function() {
     const mark = $(this).attr('mark')
     if (mark === 's') {
-      const src = '../image/s_' + Random(0, 4) + '.png'
+      const src = '../image/s_' + Random(0, 5) + '.png'
       // 石头剪刀布
       $('.page_2 .self img').attr('src', src)
       $('.page_2 .self img').show()
+      interact(src)
     } else {
-      const src = '../image/t_' + Random(0, 7) + '.png'
-      // 石头剪刀布
+      const src = '../image/t_' + Random(0, 8) + '.png'
+      // 骰子
       $('.page_2 .self img').attr('src', src)
       $('.page_2 .self img').show()
-      // 骰子
+      interact(src)
     }
-    clearImg()
+    // clearImg()
+  })
+
+  $('.page_2 .hongbao div img').click(function() {
+    $('.page_2 .hongbao_pop').show()
+    $('.page_2 .hongbao_open').show()
+    $('.page_2 .hongbao_detail').hide()
+  })
+
+  $('.page_2 .hongbao_open').click(function() {
+    $('.page_2 .hongbao_open').hide()
+    $('.page_2 .hongbao_detail').show()
+  })
+  $('.page_2 .hongbao_detail').click(function() {
+    $('.page_2 .hongbao_pop').hide()
+    $('.page_2 .hongbao_detail').hide()
   })
 
   function joinRoom() {
+    $('.self > div').attr('uid', user)
     if (rtc) return;
     const userId = user;
     const roomId = room;
@@ -99,4 +117,19 @@ $(document).ready(function() {
     rtc.join();
   }
   joinRoom()
+
+  function interact(src) {
+    socket.emit('interact', {
+      src,
+      user,
+    })
+  }
+
+  socket.on('interact', data => {
+    const query = '[uid=' + data.user + ']'
+    $(query + '> img').remove()
+    $('<img />', {
+      src: data.src,
+    }).appendTo(query);
+  })
 })
