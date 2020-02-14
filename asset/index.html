@@ -5,78 +5,74 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 <meta content="yes" name="apple-touch-fullscreen">
 <meta name="format-detection" content="telephone=no">
-<title>Meet U</title>
+<title>YunHigh</title>
 <link rel="stylesheet" href="./style/style.css">
-<style>
-#myVideo {
-  left: 100px;
-}
-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100px;
-}
-</style>
 </head>
 <body>
-<div class="menu_box js_menu_box">
-  <div>
-    <img src="./image/avatar.png" class="logo">
-    <img src="./image/list.png" class="list">
-  </div>
-</div>
-<div class="message_box js_message_box">
-  <div>
-    <img src="./image/message_list.png" >
-  </div>
-</div>
-<div class="step_1 js_step_1">
-  <img src="./image/logo.png" class="logo">
-  <input type="text" placeholder="用户名" class="js_username"/>
-  <div class="btn js_login">登录</div>
-</div>
-<div class="step_2 js_step_2">
-  <img src="./image/menu.png" class="menu js_menu">
-  <img src="./image/message.png" class="message js_message">
-  <div class="btn">
-    <img src="./image/btn.png" class="start">
-  </div>
-  <img src="./image/btn_about.png" class="about">
-</div>
-<div class="step_3 js_step_3">
-  <div class="loading">
-    <img class="hello" src="./image/loading.png">
-    <div class="round">
-      <img class="img" src="./image/round.png">
+<div class="page_1">
+  <div class="name"></div>
+  <div class="yun"></div>
+  <div class="create">创建房间</div>
+  <div class="join">加入房间</div>
+  <div class="pop">
+    <div class="input">
+      <input placeholder="加入房间" />
+      <div class="add"></div>
     </div>
-    <p>目前在线 <span class="friends">0</span> 位聊友 <br />正在匹配对的人</p>
+    <div class="friend"></div>
   </div>
 </div>
-<div class="step_4 js_step_4">
-  <video id="myVideo" autoplay></video>
-  <div style="width:0;height:0;overflow:hidden;">
+<div class="page_2">
+  <div class="head">
+    <i>#13979</i>
+    <span>隔壁老王的房间</span>
+    <div class="friend"></div>
   </div>
-  <div class="quit js_quit">退出</div>
-  <div class="box">
-    <span>我们今天聊聊</span>
-    <p class="js_topic">北京的鬼天气咋又冷了</p>
-  </div>
-  <div class="avatar">
-    <div class="women">
-      <img src="./image/49.jpg" class="js_avatar_w">
-      <div class="js_name_w"></div>
-    </div>
-    <div class="man">
-      <img src="./image/50.jpg" class="js_avatar_m">
-      <div class="js_name_m"></div>
+  <div class="self">
+    <div>
+      <video id="myVideo" autoplay></video>
+      <img src="" alt="" id="myImg" />
     </div>
   </div>
-  <div class="time">倒计时: 00:<span class="js_second">59<span></div>
-  <div class="buttom">
-    <div class="pay js_pop">支付1元继续畅聊</div>
-    <div class="add js_pop">添加好友</div>
+  <div class="video">
+    <div>
+      <video id="oneVideo" autoplay></video>
+    </div>
+    <div>
+      <video id="twoVideo" autoplay></video>
+    </div>
+  </div>
+  <div class="friend_bg"></div>
+  <div class="friend_list">
+    <div>古力娜扎</div>
+    <div>玄彬</div>
+    <div>王小美</div>
+    <div>王博林</div>
+  </div>
+  <div class="tool">
+    <ul class="tab">
+      <li mark="biaoqing"></li>
+      <li mark="beijing"></li>
+      <li mark="youxi" class="active"></li>
+      <li mark="hongbao"></li>
+      <li mark="luxiang"></li>
+    </ul>
+    <div class="biaoqing">
+      <div><img src="../image/b_1.png" alt=""></div>
+      <div><img src="../image/b_2.png" alt=""></div>
+      <div><img src="../image/b_3.png" alt=""></div>
+    </div>
+    <div class="beijing">
+      <div><img src="../image/bg_1.png" mark="bg_1"></div>
+      <div><img src="../image/bg_2.png" mark="bg_2"></div>
+      <div><img src="../image/bg_3.png" mark="bg_3"></div>
+      <div><img src="../image/bg_4.png" mark="bg_4"></div>
+      <div><img src="../image/bg_5.png" mark="bg_5"></div>
+    </div>
+    <div class="youxi">
+      <div><img src="../image/t_0.png" mark="t"></div>
+      <div><img src="../image/s_0.png" mark="s"></div>
+    </div>
   </div>
 </div>
 <script src="./script/simplewebrtc-with-adapter.bundle.js"></script>

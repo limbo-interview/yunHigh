@@ -1,319 +1,410 @@
 * {
+  margin: 0;
   padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
   margin: 0;
 }
+.page_1 {
+  // display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 
-html,
-body,
-.step_1,
-.step_2,
-.step_3,
-.step_4 {
+.page_1 .name {
+  margin: 108px auto 0;
+  width: 36vw;
+  height: 13.33vw;
+
+  background: url(../image/mingzi@3x.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.page_1 .yun {
+  margin: 5vw auto 0;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
+  height: 54vw;
 
-body {
-  background: url(../image/bg.png) no-repeat center center;
+  background: url(../image/yun@3x.png) no-repeat center center;
   background-size: 100% 100%;
 }
 
-.menu_box {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-}
-.menu_box div {
-  position: fixed;
-  top: 0;
-  right: 80px;
-  background: url(../image/mask.png) no-repeat center center;
-  background-size: 100% 100%;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  overflow: hidden;
-}
-.menu_box .logo {
-  display: block;
-  margin: 100px auto 0;
-}
-.menu_box .list {
-  margin: 60px 0 0 60px;
-}
-.message_box {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-}
-.message_box div {
-  position: fixed;
-  top: 0;
-  background: url(../image/mask.png) no-repeat center center;
-  background-size: 100% 100%;
-  bottom: 0;
-  right: 0;
-  z-index: 1;
-  width: 80%;
-}
-.message_box img {
-  margin: 10px 0 0 10px;
-}
+.page_1 .join,
+.page_1 .create {
+  position: absolute;
+  right: 20vw;
+  bottom: 50vw;
+  left: 20vw;
 
-.step_1,
-.step_2,
-.step_3,
-.step_4 {
-  box-sizing: border-box;
-  display: none;
-}
+  height: 16vw;
 
-.step_1 .logo {
-  display: block;
-  width: 156px;
-  height: 111px;
-  margin: 140px auto 0;
-}
-.step_1 input {
-  display: block;
-  width: 320px;
-  height: 40px;
-  margin: 60px auto 0;
-
-  color: rgba(255, 255, 255, 1);
+  color: #fff;
+  font-size: 24px;
+  line-height: 16vw;
   text-align: center;
 
-  background: none;
-  border: 1px solid rgba(255, 255, 255, .4);
-  border-width: 0 0 1px;
+  background-image: linear-gradient(to top, rgb(255, 66, 65) , rgb(252, 120, 119));
+  border-radius: 8.5vw;
+}
+
+.page_1 .join {
+  bottom: 20vw;
+}
+
+.page_1 .pop {
+  position: absolute;
+  top: 180px;
+  left: 50%;
+
+  display: none;
+  height: 400px;
+  width: 320px;
+  margin: 0 0 0 -160px;
+
+  background: url(../image/tanchu@3x.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.page_1 .input {
+  position: relative;
+  width: 240px;
+  height: 52px;
+  margin: 59px auto 0;
+  border: 1px solid rgb(255, 69, 68);
+  border-radius: 26px;
+  overflow: hidden;
+}
+.page_1 .input input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  line-height: 52px;
+  text-indent: 20px;
+  font-size: 16px;
+  border: 0;
   outline: none;
 }
-.step_1 .btn {
-  width: 320px;
-  height: 40px;
-  margin: 20px auto;
-
-  font-size: 16px;
-  color: rgba(255, 255, 255, 1);
-  line-height: 40px;
-  text-align: center;
-  background: linear-gradient(rgb(170 ,78, 253), rgb(253, 104, 108));
-  border-radius: 20px;
-}
-
-.step_2 {
-  position: relative;
-}
-.step_2 .menu {
+.page_1 .input div {
   position: absolute;
-  top: 10px;
-  left: 10px;
-}
-.step_2 .message {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-.step_2 .btn {
-  display: block;
-  width: 100%;
-  height: 320px;
-  margin: 50px auto 0;
-  background: url(../image/sound.png) no-repeat center center;
+  top: 4px;
+  right: 5px;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+
+  background: url(../image/jiantou@3x.png) no-repeat center center;
   background-size: 100% 100%;
 }
-.step_2 .start {
-  margin: 0 auto;
-  display: block;
-  width: 320px;
-  height: 320px;
-}
-.step_2 .about {
-  display: block;
-  width: 231px;
-  height: 90px;
-  margin: 50px auto 0;
-}
 
-.step_3 .loading {
-  width: 100%;
-  height: 320px;
-  margin: 50px auto 0;
-  position: relative;
-  background: url(../image/sound.png) no-repeat center center;
+.page_1 .friend {
+  width: 200px;
+  height: 114px;
+  margin: 110px auto 0;
+
+  background: url(../image/friend@3x.png) no-repeat center center;
   background-size: 100% 100%;
 }
-.step_3 .round {
-  width: 320px;
-  height: 320px;
-  position: absolute;
-  top: -4.5px;
-  left: 50%;
-  margin: 0 0 0 -160px;
-  animation: myRotate 3s linear infinite;
-}
-.step_3 .round img {
+
+
+
+/* 第二页 */
+.page_2 {
+  display: none;
+  width: 100%;
   height: 100%;
-  float: right;
+  background: url() no-repeat center center;
+  background-size: 100% 100%;
 }
-.step_3 .hello {
-  display: block;
-  width: 320px;
-  height: 320px;
-  margin: 0 auto;
-  animation:heartbeat 1s infinite;
-}
-@keyframes myRotate{
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(90deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes heartbeat {
-  0% {
-    transform: scale(0.8, 0.8);
-    opacity:1;
-  }
-  25% {
-    transform: scale(1,1);
-    opacity:0.8;
-  }
-  100% {
-    transform: scale(0.8,0.8);
-    opacity:1;
-  }
-}
-.step_3 p {
-  margin: 131px 0 0;
-
-  text-align: center;
-  color: rgba(255, 255, 255, 1);
-  font-size: 16px;
-  line-height: 44px;
-}
-
-.step_4 {
+.page_2 .head {
   position: relative;
-}
-.step_4 .quit {
-  position: absolute;
-  top: 16px;
-  right: 20px;
-  color: rgba(255, 255, 255, 1);
-}
-.step_4 .box {
-  width: 300px;
-  height: 100px;
-  margin: 88px auto 0;
+  width: 100%;
+  height: 47px;
 
-  border: 1px solid rgba(255, 255, 255, .12);
-  background: rgba(30, 35, 43, .12);
-  border-radius: 4px;
-  box-shadow: 0px 6px 12px 10px rgba(0, 0, 0, .06);
+  border: 1px solid rgb(242, 242, 242);
+  border-width: 0 0 1px 0;
+  background: #fff;
 }
-.step_4 .box span {
-  display: block;
-  margin: 23px 0 0;
+.page_2 .head i,
+.page_2 .head span {
   font-size: 16px;
-  color: rgba(255, 255, 255, 1);
-  line-height: 22px;
-  text-align: center;
+  line-height: 47px;
 }
-.step_4 .box p {
-  display: block;
-  font-size: 20px;
-  color: rgba(255, 255, 255, 1);
-  line-height: 44px;
-  text-align: center;
+.page_2 .head i {
+  padding: 0 5px 0 15px;
+  font-style: normal;
+  color: rgb(255, 69, 68);
 }
-.step_4 .avatar {
-  margin: 30px 20px 0;
-}
-.step_4 .avatar .women {
-  position: relative;
-  height: 100px;
-  background: url(../image/sound_wave.png) no-repeat center left;
-}
-.step_4 img {
-  border: 3px solid rgb(173, 142, 237);
-  border-radius: 50%;
-  height: 100%;
-}
-.step_4 .women div {
+.page_2 .head div {
   position: absolute;
-  width: 100px;
-  text-align: center;
-  bottom: -35px;
+  top: 13px;
+  right: 12px;
+  width: 24px;
+  height: 22px;
+
+  background: url(../image/haoyou@3x.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.page_2 .friend_bg {
+  display: none;
+  position: fixed;
+  top: 47px;
   right: 0;
-  float: right;
-  font-size: 20px;
-  line-height: 20px;
-  color: #fff;
-}
-.step_4 .women img {
-  float: right;
-}
-.step_4 .avatar .man {
-  position: relative;
-  height: 100px;
-  background: url(../image/sound_wave.png) no-repeat center right;
-}
-.step_4 .man div {
-  position: absolute;
-  width: 100px;
-  text-align: center;
-  top: -35px;
+  bottom: 0;
   left: 0;
-  float: right;
-  font-size: 20px;
-  line-height: 20px;
-  color: #fff;
-}
-.step_4 .man img {
-  float: left;
-}
-.step_4 .time {
-  margin: 44px auto 0;
-  color: rgba(255, 255, 255, 1);
-  font-size: 20px;
-  line-height: 28px;
-  text-align: center;
-}
-.step_4 .buttom {
-  margin: 70px 20px 0;
-}
-.step_4 .buttom .pay {
-  float: left;
-  width: 190px;
-  height: 40px;
+  z-index: 100;
 
-  color: rgba(255, 255, 255, 1);
-  line-height: 40px;
-  text-align: center;
-  background: linear-gradient(rgb(170 ,78, 253), rgb(253, 104, 108));
-  border-radius: 20px;
+  background: rgba(33, 33, 33, .5);
 }
-.step_4 .buttom .add {
-  float: right;
-  width: 120px;
-  height: 34px;
-  color: rgba(255, 255, 255, 1);
-  line-height: 34px;
+
+.page_2 .friend_list {
+  display: none;
+  position: fixed;
+  top: 47px;
+  right: 0;
+  bottom: 0;
+  z-index: 101;
+
+  width: 180px;
+
+  background: rgba(255, 255, 255, 1);
+}
+.page_2 .friend_list div {
+  position: relative;
+  width: 100%;
+  height: 55px;
+
+  color: rgb(0, 0, 0);
+  text-indent: 68px;
+  line-height: 55px;
+}
+
+.page_2 .friend_list div:nth-child(3)::before {
+  position: absolute;
+  top: 22px;
+  right: 17px;
+  z-index: 1111;
+
+  content: 'aaa';
+  height: 12px;
+  width: 12px;
+  background: url(../image/add.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.page_2 .friend_list div::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 67px;
+
+  content: ' ';
+  height: 1px;
+  background: rgb(242, 242, 242);
+}
+
+.page_2 .friend_list div:first-child::after {
+  left: 0;
+}
+
+.page_2 .friend_list div:nth-child(1),
+.page_2 .friend_list div:nth-child(3) {
+  background: url(../image/1.png) no-repeat 16px center;
+  background-size: 40px 40px;
+}
+
+.page_2 .friend_list div:nth-child(2),
+.page_2 .friend_list div:nth-child(4) {
+  background: url(../image/2.png) no-repeat 16px center;
+  background-size: 40px 40px;
+}
+
+
+.page_2 .self {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100vw;
+  height: 40vw;
+  margin: 20px 0;
+}
+.page_2 .self div {
+  position: relative;
+  width: 40%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, .1);
+}
+
+.page_2 .self video {
+  width: 100%;
+  height: 100%;
+}
+.page_2 .self img {
+  display: none;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 40px;
+  height: 40px;
+}
+.page_2 .video {
+  display: block;
   text-align: center;
-  border-radius: 20px;
-  border: 3px solid rgba(225, 95, 158, 1);
+  width: 100vw;
+  height: 40vw;
+}
+.page_2 .video div {
+  display: inline-block;
+  width: 40%;
+  height: 100%;
+  margin: 0 10px;
+
+  background: rgba(0, 0, 0, .1);
+}
+
+.page_2 .video video {
+  width: 100%;
+  height: 100%;
+}
+
+.page_2 .tool {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+
+  width: 100%;
+  height: 70vw;
+
+  background: url(../image/tool.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+.tab {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 32px;
+}
+
+.tab li {
+  list-style: none;
+  width: 32px;
+  height: 32px;
+  float: left;
+  background: red;
+}
+.tab li:nth-child(1).active {
+  background: url(../image/biaoqing@3x.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+.tab li:nth-child(1) {
+  margin: 0 34px 0 30px;
+  background: url(../image/unbiaoqing@3x.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+.tab li:nth-child(2).active {
+  background: url(../image/beijing@3x.png) no-repeat center center;
+  background-size: 28px 28px;
+}
+.tab li:nth-child(2) {
+  background: url(../image/unbeijing@3x.png) no-repeat center center;
+  background-size: 28px 28px;
+}
+
+.tab li:nth-child(3).active {
+  background: url(../image/youxi.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+.tab li:nth-child(3) {
+  margin: -20px 0 0 30px;
+  width: 60px;
+  height: 60px;
+  background: url(../image/unyouxi.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+.tab li:nth-child(4).active {
+  background: url(../image/hongbao@3x.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+.tab li:nth-child(4) {
+  margin: 0 30px 0 30px;
+  background: url(../image/unhongbao@3x.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+.tab li:nth-child(5).active {
+  background: url(../image/luxiang@3x.png) no-repeat center center;
+  background-size: 32px 24px;
+}
+.tab li:nth-child(5) {
+  background: url(../image/unluxiang@3x.png) no-repeat center center;
+  background-size: 32px 24px;
+}
+
+.biaoqing {
+  display: none;
+  margin: 110px 10px 0;
+  width: 100%;
+  height: 40px;
+}
+.biaoqing div {
+  margin: 0 0 0 10px;
+  width: 30px;
+  height: 30px;
+  float: left;
+}
+.biaoqing img {
+  width: 100%;
+  height: 100%;
+}
+.beijing {
+  display: none;
+  margin: 110px 0 0;
+  width: 100%;
+  height: 40px;
+}
+.beijing div {
+  margin: 0 0 0 10px;
+  width: 64px;
+  height: 64px;
+  float: left;
+}
+.beijing img {
+  width: 100%;
+  height: 100%;
+}
+.youxi {
+  // display: none;
+  margin: 110px 0 0;
+  width: 100%;
+  height: 40px;
+}
+.youxi div:first-child {
+  margin: 20px 0 0 69px;
+  width: 80px;
+  height: 85px;
+  float: left;
+}
+.youxi div:last-child {
+  margin: 0 0 0 60px;
+  width: 118px;
+  height: 103px;
+  float: left;
+}
+.youxi img {
+  width: 100%;
+  height: 100%;
 }
