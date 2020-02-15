@@ -17,10 +17,13 @@ router.get('/', ctx => {
 app.use(router.routes())
 
 io.on('connection', socket => {
-  // 登录
   socket.on('interact', param => {
     socket.broadcast.emit('interact', param)
     socket.emit('interact', param)
+  })
+  socket.on('plus', param => {
+    socket.broadcast.emit('plus', param)
+    socket.emit('plus', param)
   })
 })
 

@@ -86,10 +86,12 @@ body {
   border-radius: 26px;
   overflow: hidden;
 }
-.page_1 .input input {
+.page_1 .input input,
+.page_1 .bmd-form-group {
   position: absolute;
   width: 100%;
   height: 100%;
+  padding: 0;
 
   line-height: 52px;
   text-indent: 20px;
@@ -302,6 +304,30 @@ body {
 
   background: url(../image/tool.png) no-repeat center center;
   background-size: 100% 100%;
+}
+.page_2 .plus {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 68px;
+  height: 32px;
+
+  background: url(../image/plus.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+.page_2 .count {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 78px;
+  height: 22px;
+  padding: 0 10px 0 5px;
+
+  background: url(../image/count.png) no-repeat center center;
+  background-size: 100% 100%;
+
+  color: #fff;
+  font-size: 12px;
 }
 .tab {
   position: absolute;

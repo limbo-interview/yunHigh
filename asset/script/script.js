@@ -116,7 +116,7 @@ $(document).ready(function() {
     });
     rtc.join();
   }
-  joinRoom()
+  // joinRoom()
 
   function interact(src) {
     socket.emit('interact', {
@@ -124,6 +124,27 @@ $(document).ready(function() {
       user,
     })
   }
+
+  $('.plus').click(function() {
+    let count = $(`#count_${user}`)
+    count = count.length > 0 ? count.text() : 1
+    socket.emit('plus', {
+      id: user,
+      count,
+    })
+  })
+
+  socket.on('plus', param => {
+    const count = $(`#count_${param.id}`)
+    if (count.length > 0) {
+      $(count).text(count.text() * 1 + 1)
+    } else {
+      const query = '[uid=' + param.id + ']'
+      const nick = `${param.id.substr(param.id.length - 5)}`
+      const el = `<div class='count'>好友_${nick} <span id='count_${param.id}'>${param.count}</span>杯</div>`
+      $(el).appendTo(query)
+    }
+  })
 
   socket.on('interact', data => {
     const query = '[uid=' + data.user + ']'
