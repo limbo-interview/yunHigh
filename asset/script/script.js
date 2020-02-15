@@ -45,6 +45,7 @@ $(document).ready(function() {
   $('.page_2 .tab li').click(function() {
     const mark = $(this).attr('mark')
     $('.page_2 .tool > div').hide()
+    $('.page_2 .tool > .plus').show()
     $('.' + mark).show()
     $('.page_2 .tab li').removeClass('active')
     $(this).addClass('active')
